@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Chatbot</title>
   </head>
   <body>
     <div class="js-container"></div>
@@ -13,20 +13,58 @@
 
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
     <script type="text/babel">
-      const button = <button>hello</button>;
-      const paragraph = <p>God is great</p>;
+      function ChatInput() {
+        return (
+          <>
+            <input placeholder="Send a message to Chatbot" size="30" />
+            <button>Send</button>
+          </>
+        );
+      }
 
-      const div = (
-        <div>
-          <button>hello</button>
-          <p>God is good {2 + 2}</p>
-        </div>
+      function ChatMessage({ message, sender }) {
+        // const message = props.message;
+        // const sender = props.sender;
+        // const { message, sender } = props;
+
+        if (sender === "robot") {
+          return (
+            <div>
+              <img src="Images/robot.png" width="50" />
+              {message}
+            </div>
+          );
+        }
+
+        return (
+          <div>
+            {message}
+            <img src="Images/user.png" width="50" />
+          </div>
+        );
+      }
+
+      const app = (
+        <>
+          <ChatInput />
+          <ChatMessage message="hello chatbot" sender="user" />
+          <ChatMessage message="Hello! How can i help you?" sender="robot" />
+          <ChatMessage message="Can you get me today's date" sender="user" />
+          <ChatMessage message="Today is September 27" sender="robot" />
+          {/*ChatInput()*/}
+          {/*<ChatInput></ChatInput>*/}
+        </>
       );
 
       const container = document.querySelector(".js-container");
-      ReactDOM.createRoot(container).render(div);
+      ReactDOM.createRoot(container).render(app);
     </script>
 
-    <script src="react-basics.js"></script>
+    <script src="react-basics.js">
+      /*  const props = {
+          message: "hello"
+        }
+        console.log(props.message)*/
+    </script>
   </body>
 </html>
