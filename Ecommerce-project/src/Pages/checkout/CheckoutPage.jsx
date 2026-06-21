@@ -97,8 +97,7 @@ export function CheckoutPage({ cart }) {
                             return (
                               <div
                                 key={deliveryOption.id}
-                                classNa
-                                me="delivery-option"
+                                className="delivery-option"
                               >
                                 <input
                                   type="radio"
