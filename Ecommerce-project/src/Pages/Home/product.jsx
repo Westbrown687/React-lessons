@@ -58,7 +58,6 @@ export function Product({ product, loadCart }) {
 
       <div className="added-to-cart">
         <img src="images/icons/checkmark.png" />
-        Added
       </div>
 
       <button className="add-to-cart-button button-primary" onClick={addToCart}>
