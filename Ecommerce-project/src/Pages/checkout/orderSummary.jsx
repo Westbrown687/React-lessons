@@ -1,6 +1,5 @@
 import dayjs from "dayjs";
 import axios from "axios";
-import { useState } from "react";
 import { formatMoney } from "../../utils/money";
 import { DeliveryOptions } from "./deliveryOptions";
 
